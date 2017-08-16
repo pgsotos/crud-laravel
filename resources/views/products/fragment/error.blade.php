@@ -1,7 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: pgsoto
- * Date: 16-08-17
- * Time: 01:21
- */
+@if(count($errors))
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">
+            &times;
+        </button>
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
