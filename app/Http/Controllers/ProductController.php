@@ -12,4 +12,10 @@ class ProductController extends Controller
         $products = Product::orderBy('id', 'ASC')->paginate();
         return view('products.index', compact('products'));
     }
+
+    public function show($id){
+        $product = Product::find($id);
+        return view('products.show', compact('product'));
+    }
+
 }

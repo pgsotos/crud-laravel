@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="col-sm-8">
-        <h2>Listado de productos
+        <h2>
+            Listado de productos
             <a href="{{ route('products.create') }}" class="btn btn-primary pull-right">Nuevo</a>
         </h2>
         <table class="table table-hover table-striped">
@@ -20,9 +21,15 @@
                     <td><strong>{{ $product->name }}</strong>
                         {{ $product->short }}
                     </td>
-                    <td>Ver</td>
-                    <td>Editar</td>
-                    <td>Borrar</td>
+                    <td>
+                        <a href="{{ route('products.show', $product->id) }}">Ver</a>
+                    </td>
+                    <td>
+                        <a href="{{ route('products.edit', $product->id) }}">Editar</a>
+                    </td>
+                    <td>
+                        <a href="">Borrar</a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
